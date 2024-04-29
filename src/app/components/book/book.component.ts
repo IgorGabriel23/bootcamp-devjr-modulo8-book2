@@ -7,10 +7,5 @@ import { Book } from '../../book';
   styleUrl: './book.component.css'
 })
 export class BookComponent {
-  book: Book = {
-    id: 1,
-    title: "Angular",
-    author: "Glauco Todesco",
-    price: 50.00
-  }
+  book: Book = {} as Book;
 }
