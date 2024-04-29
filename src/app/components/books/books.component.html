@@ -1,6 +1,6 @@
 <div class="container">
     <h3>Livros Cadastrados</h3>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -13,7 +13,7 @@
             <tr *ngFor="let book of books">
                 <td>{{book.id}}</td>
                 <td>{{book.title}}</td>
-                <td>{{book.author}}</td>
+                <td>{{book.author | uppercase}}</td>
                 <td>{{book.price}}</td>
             </tr>
         </tbody>
