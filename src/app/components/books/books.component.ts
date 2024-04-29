@@ -6,7 +6,13 @@ import { Book } from '../../book';
   templateUrl: './books.component.html',
   styleUrl: './books.component.css'
 })
+
 export class BooksComponent {
+
+  book: Book = {
+    title: "Angular"
+  } as Book;
+  
   books: Book[] = [
     {
       id: 1,
