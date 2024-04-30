@@ -10,4 +10,8 @@ import { Book } from '../../book';
 export class BookComponent {
   @Input()
   book: Book = {} as Book;
+
+  save(){
+    console.log("Save");
+  }
 }

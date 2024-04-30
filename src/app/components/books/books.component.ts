@@ -9,9 +9,7 @@ import { Book } from '../../book';
 
 export class BooksComponent {
 
-  book: Book = {
-    title: "Angular"
-  } as Book;
+  book: Book = {} as Book;
   
   books: Book[] = [
     {
