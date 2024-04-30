@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from '../../book';
 
 @Component({
@@ -11,7 +11,10 @@ export class BookComponent {
   @Input()
   book: Book = {} as Book;
 
+  @Output()
+  saveEmitter = new EventEmitter
+
   save(){
-    console.log("Save");
+    this.saveEmitter.emit();
   }
 }

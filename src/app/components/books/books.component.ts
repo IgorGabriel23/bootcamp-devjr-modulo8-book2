@@ -9,7 +9,7 @@ import { Book } from '../../book';
 
 export class BooksComponent {
 
-  book: Book = {} as Book;
+  newBook: Book = {} as Book;
   
   books: Book[] = [
     {
@@ -36,5 +36,11 @@ export class BooksComponent {
       author: "Antenor Lucas",
       price: 28.50
     }
-  ]
+  ];
+
+  saveBook(){
+    this.newBook.id = this.books.length + 1;
+    this.books.push(this.newBook);
+    this.newBook = {} as Book;
+  }
 }
