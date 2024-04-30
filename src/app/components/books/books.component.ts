@@ -9,7 +9,9 @@ import { Book } from '../../book';
 
 export class BooksComponent {
 
-  newBook: Book = {} as Book;
+  book: Book = {} as Book;
+  isUpdate: boolean = false;
+  idCount: number = 5;
   
   books: Book[] = [
     {
@@ -39,8 +41,21 @@ export class BooksComponent {
   ];
 
   saveBook(){
-    this.newBook.id = this.books.length + 1;
-    this.books.push(this.newBook);
-    this.newBook = {} as Book;
+    if(!this.isUpdate){
+      this.book.id = this.idCount;
+      this.idCount++;
+      this.books.push(this.book);
+    }
+    this.book = {} as Book;
+    this.isUpdate = false;
+  }
+
+  update(selectedBook: Book){
+    this.isUpdate = true;
+    this.book = selectedBook
+  }
+
+  remove(removeBook: Book){
+    this.books = this.books.filter( b => b !== removeBook);
   }
 }
